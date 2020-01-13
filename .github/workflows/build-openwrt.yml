@@ -62,6 +62,7 @@ jobs:
 
     - name: Remove duplicate package
       run: |
+        cd openwrt
         rm -rf feeds/lienol/lienol/v2ray
         rm -rf feeds/lienol/lienol/openssl1.1
         rm -rf feeds/lienol/lienol/trojan

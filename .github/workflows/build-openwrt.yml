@@ -117,7 +117,7 @@ jobs:
         make package/lean/srelay/compile -j1 V=s
 
     - name: Upload bin directory
-      uses: actions/upload-artifact@ssr-plus-socks
+      uses: actions/upload-artifact@master
       if: always()
       with:
         name: OpenWrt_bin
@@ -131,7 +131,7 @@ jobs:
         echo "::set-env name=FIRMWARE::$(pwd)"
 
     - name: Upload firmware
-      uses: actions/upload-artifact@ssr-plus-socks
+      uses: actions/upload-artifact@master
       if: always()
       with:
         name: OpenWrt_firmware

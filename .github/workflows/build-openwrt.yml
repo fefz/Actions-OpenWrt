@@ -57,6 +57,9 @@ jobs:
         REPO_URL: https://github.com/Lienol/openwrt-package
       run: cd openwrt && echo "src-git lienol https://github.com/Lienol/openwrt-package" >> ./feeds.conf.default
 
+    - name: Use ssr plus
+      run: sed -i 's/\#src-git helloworld/\src-git helloworld/g' ./feeds.conf.default
+      
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -77,9 +80,6 @@ jobs:
         rm -rf package/lean/luci-app-pppoe-relay
         rm -rf package/lean/luci-app-pptp-server
         rm -rf package/lean/luci-app-v2ray-server
-        
-    - name: Use ssr plus
-      run: sed -i 's/\#src-git helloworld/\src-git helloworld/g' ./feeds.conf.default
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a

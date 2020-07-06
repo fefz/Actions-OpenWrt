@@ -14,4 +14,4 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 # Add a feed source
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 mkdir temp && cd temp && git clone https://github.com/rosywrt/luci-theme-rosy && cp -R luci-theme-rosy/luci-theme-rosy/ ../package/ && cd .. && rm -rf temp
-mkdir temp && cd temp && git clone https://github.com/vernesong/OpenClash && cp -R OpenClash/luci-app-openclash/ ../package/ && cd .. && rm -rf temp
+mkdir temp && cd temp && git clone -b master https://github.com/vernesong/OpenClash && cp -R OpenClash/luci-app-openclash/ ../package/ && cd .. && rm -rf temp

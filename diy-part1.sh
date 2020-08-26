@@ -12,7 +12,10 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # add naiveproxy suupprt for ssrplus
-sed -i '$a src-git helloworld https://github.com/1715173329/helloworld/tree/naiveproxy' feeds.conf.default
+mkdir -p /etc/naive
+git clone -b naiveproxy https://github.com/1715173329/helloworld /etc/naive
+
+sed -i '$a src-link helloworld /etc/naive/helloworld' feeds.conf.default
 
 # Add a feed source
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default

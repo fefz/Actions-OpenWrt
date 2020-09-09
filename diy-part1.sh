@@ -9,10 +9,10 @@
 #=============================================================
 
 # Uncomment a feed source
-# sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # add naiveproxy suupprt for ssrplus
-sed -i '$a src-git helloworld https://github.com/1715173329/helloworld.git;naiveproxy' feeds.conf.default
+# sed -i '$a src-git helloworld https://github.com/1715173329/helloworld.git;naiveproxy' feeds.conf.default
 
 # add openclash
 git clone https://github.com/vernesong/OpenClash && mv OpenClash/luci-app-openclash ./package

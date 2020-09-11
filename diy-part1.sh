@@ -20,5 +20,9 @@ git clone https://github.com/vernesong/OpenClash && mv OpenClash/luci-app-opencl
 # add lienol package
 sed -i '$a src-git diy1 https://github.com/xiaorouji/openwrt-package.git;master' feeds.conf.default
 
+# add smartdns
+sed -i '$a src-git luci-smartdns https://github.com/pymumu/luci-app-smartdns' feeds.conf.default
+sed -i '$a src-git smartdns https://github.com/pymumu/openwrt-smartdns' feeds.conf.default
+
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
